@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Local Elections 2016</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Roboto', "Helvetica Neue", Helvetica,Arial, sans-serif;
+      font-size: 14px;
+      color: #272727;
+      background: #f7f7f7;
+    }
+
+    h4 {
+      font-size: 1.2em;
+      background-color: #444444;
+      color: white;
+      padding: 1em;
+      margin: 0 auto;
+      text-transform: capitalize;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+    }
+
+    h5 {
+      font-weight: 500;
+      font-size: 1.1em;
+    }
+
+    .header {
+      background: #444444;
+      text-align: center;
+    }
+
+    .container {
+      padding: 10px;
+    }
+
+    .card {
+      margin: 1.3em auto 2em;
+      background: #fff;
+      -webkit-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.18);
+      -moz-box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.18);
+      box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.18);
+    }
+
+    .card-content {
+      padding: 1em 1em 2.5em;
+    }
+
+    .percent-bar {
+      height: 6px;
+      background: #ccc;
+      border-radius: 4px;
+    }
+
+    .percent-bar-inside {
+      height: 3px;
+      background: #272727;
+      border-radius: 4px;
+    }
+
+    .green {
+      background: #5faf58;
+    }
+  </style>
+
+</head>
+<body>
+
+  <h4 class="header">Local Elections 2016</h4>
+  <div class="container">
+
+
+    <div id="kb" class="card">
+      
+      <h4><%= @kbcontest %></h4>
+      <div class="card-content">
+
+      <div class="field">
+        <h5><%= @kbnames[0] %> - Votes: <%= @kbvotes[0] %> - Percent: <%= @kbpercent[0] %>%</h5>
+        <div class="percent-bar">
+          <div class="percent-bar-inside" style="width: <%= @kbpercent[0] %>%"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <h5><%= @kbnames[1] %> - Votes: <%= @kbvotes[1] %> - Percent: <%= @kbpercent[1] %>%</h5>
+        <div class="percent-bar">
+          <div class="percent-bar-inside" style="width: <%= @kbpercent[1] %>%"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <h5><%= @kbnames[2] %> - Votes: <%= @kbvotes[2] %> - Percent: <%= @kbpercent[2] %>%</h5>
+        <div class="percent-bar">
+          <div class="percent-bar-inside" style="width: <%= @kbpercent[2] %>%"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <h5><%= @kbnames[3] %> - Votes: <%= @kbvotes[3] %> - Percent: <%= @kbpercent[3] %>%</h5>
+        <div class="percent-bar">
+          <div class="percent-bar-inside" style="width: <%= @kbpercent[3] %>%"></div>
+        </div>
+      </div>
+
+      <div class="field">
+        <h5><%= @kbnames[4] %> - Votes: <%= @kbvotes[4] %> - Percent: <%= @kbpercent[4] %>%</h5>
+        <div class="percent-bar">
+          <div class="percent-bar-inside" style="width: <%= @kbpercent[4] %>%"></div>
+        </div>
+      </div>
+
+
+      <div class="field">
+        <h5><%= @kbnames[5] %> - Votes: <%= @kbvotes[5] %> - Percent: <%= @kbpercent[5] %>%</h5>
+        <div class="percent-bar">
+          <div class="percent-bar-inside" style="width: <%= @kbpercent[5] %>%"></div>
+        </div>
+      </div>
+      </div>
+
+    </div>
+
+<!-------------- NEXT -->
+
+    <div id="mayor" class="card">
+
+      <h4><%= @mayorcontest %></h4>
+      <div class="card-content">
+        <div class="field">
+          <h5><%= @mayornames[0] %> - Votes: <%= @mayorvotes[0] %> - Percent: <%= @mayorpercent[0] %>%</h5>
+          <div class="percent-bar">
+            <div class="percent-bar-inside" style="width: <%= @mayorpercent[0] %>%"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <h5><%= @mayornames[1] %> - Votes: <%= @mayorvotes[1] %> - Percent: <%= @mayorpercent[1] %>%</h5>
+          <div class="percent-bar">
+            <div class="percent-bar-inside" style="width: <%= @mayorpercent[1] %>%"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+<!-------------- NEXT -->
+
+    <div id="solar" class="card">
+      
+      <h4><%= @solarcontest %></h4>
+      <div class="card-content">
+      
+        <div class="field">
+          <h5><%= @solarnames[0] %> - Percent: <%= @solarpercent[0] %></h5>
+          <div class="percent-bar">
+            <div class="percent-bar-inside" style="width: <%= @solarpercent[0] %>"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <h5><%= @solarnames[1] %> - Percent: <%= @solarpercent[1] %></h5>
+          <div class="percent-bar">
+            <div class="percent-bar-inside" style="width: <%= @solarpercent[1] %>"></div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+<!-------------- NEXT -->
+
+    <div id="weed" class="card">
+    
+      <h4 class="green"><%= @weedcontest %></h4>
+    
+
+      <div class="card-content">
+
+        <div class="field">
+          <h5><%= @weednames[0] %> - Percent: <%= @weedpercent[0] %></h5>
+          <div class="percent-bar">
+            <div class="percent-bar-inside green" style="width: <%= @weedpercent[0] %>"></div>
+          </div>
+        </div>
+
+        <div class="field">
+          <h5><%= @weednames[1] %> - Percent: <%= @weedpercent[1] %></h5>
+          <div class="percent-bar">
+            <div class="percent-bar-inside green" style="width: <%= @weedpercent[1] %>"></div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </div>
+  
+</body>
+</html>
