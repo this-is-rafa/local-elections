@@ -42,6 +42,13 @@
       font-weight: 400;
     }
 
+    .smaller {
+      font-size: 0.9em;
+      font-weight: 400;
+      color: #9c9c9c;
+      text-transform: lowercase;
+    }
+
     .header {
       background: #444444;
       text-align: center;
@@ -89,7 +96,9 @@
 
     <div id="kb" class="card">
       
-      <h4><%= @kbcontest %></h4>
+      <h4><%= @kbcontest %><br />
+      <span class="smaller"><%= @kbreport %> of <%= @kbtotal %> precincts reporting</span>
+      </h4>
       <div class="card-content">
 
       <div class="field">
@@ -142,7 +151,10 @@
 
     <div id="mayor" class="card">
 
-      <h4><%= @mayorcontest %></h4>
+      <h4><%= @mayorcontest %><br />
+      <span class="smaller"><%= @mayorreport %> of <%= @mayortotal %> precincts reporting.</span>
+      </h4>
+
       <div class="card-content">
         <div class="field">
           <h5><%= @mayornames[0] %> <br /><span class="small">Votes: <%= @mayorvotes[0] %> - Percent: <%= @mayorpercent[0] %>%</span></h5>

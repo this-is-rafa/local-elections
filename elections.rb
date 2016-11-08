@@ -27,6 +27,8 @@ kbcouncil = election_json['Contests'][51]
 @kbnames = kbcouncil["CH"] #candidates 0..5
 @kbpercent = kbcouncil["PCT"] #percentage 0..5
 @kbvotes = kbcouncil["V"] #votes 0..5
+@kbtotal = kbcouncil["TP"]
+@kbreport = kbcouncil["PR"]
 
 #mayor 33
 mayor = election_json['Contests'][33]
@@ -34,6 +36,8 @@ mayor = election_json['Contests'][33]
 @mayornames = mayor["CH"] #candidates 0..1
 @mayorpercent = mayor["PCT"] #percentage
 @mayorvotes = mayor["V"] #votes
+@mayortotal = mayor["TP"]
+@mayorreport = mayor["PR"]
 
 #solar 69
 solar = election_json['Contests'][69]
