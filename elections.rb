@@ -6,9 +6,16 @@ require 'sinatra'
 
 get "/" do
 
-miami_url = "http://results.enr.clarityelections.com/FL/Dade/64620/179412/json/sum.json"      
-miami_response = HTTParty.get(miami_url)
+miami_json = "http://results.enr.clarityelections.com/FL/Dade/64620/179412/json/sum.json"      
+miami_response = HTTParty.get(miami_json)
 election_json = JSON.parse(miami_response.body)
+
+miami_url = "http://results.enr.clarityelections.com/FL/Dade/64620/179412/en/summary.html"
+miami_url_response = HTTParty.get(miami_url)
+miami_dom = Nokogiri::HTML(miami_url_response.body)
+
+@last_update = miami_dom.css("span#wlu").inner_html.to_s.split(">").last
+
 
 fl_url = "http://enight.elections.myflorida.com/Constitutional/Amendment.aspx"
 fl_response = HTTParty.get(fl_url)

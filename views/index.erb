@@ -37,6 +37,21 @@
       font-size: 1.1em;
     }
 
+    .last-update {
+      color: #828282;
+      padding: 1em;
+      font-size: 1em;
+      text-align: center;
+      margin: 0 auto;
+      font-weight: 400;
+    }
+
+    .last-update p {
+      margin: 0;
+      padding: 0;
+      line-height: 1.4em;
+    }
+
     .small {
       font-size: 1em;
       font-weight: 400;
@@ -106,7 +121,11 @@
 
   <h4 class="header">Local Elections 2016</h4>
   <div class="container">
-
+    
+    <div class="last-update">
+      <p>Last update from Miami Dade Elections</p>
+      <p><%= @last_update %></p>
+    </div>
 
     <div id="kb" class="card">
       
