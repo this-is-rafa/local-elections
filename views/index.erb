@@ -46,7 +46,7 @@
       font-size: 0.9em;
       font-weight: 400;
       color: #9c9c9c;
-      text-transform: lowercase;
+      text-transform: none;
     }
 
     .header {
@@ -82,8 +82,22 @@
       border-radius: 4px;
     }
 
+    .yellow {
+      background: #eacb17;
+    }
+
     .green {
       background: #5faf58;
+    }
+
+    .green2 {
+      color: #bef9b9;
+    }
+
+    @media screen and (min-width: 1024px) {
+      .card {
+        max-width: 600px;
+      }
     }
   </style>
 
@@ -177,7 +191,8 @@
 
     <div id="solar" class="card">
       
-      <h4><%= @solarcontest %></h4>
+      <h4><%= @solarcontest %><br />
+      <span class="smaller">Statewide Results - 60% to pass</h4>
       <div class="card-content">
       
         <div class="field">
@@ -190,7 +205,7 @@
         <div class="field">
           <h5><%= @solarnames[1] %> <br /><span class="small">Percent: <%= @solarpercent[1] %></span></h5>
           <div class="percent-bar">
-            <div class="percent-bar-inside" style="width: <%= @solarpercent[1] %>"></div>
+            <div class="percent-bar-inside yellow" style="width: <%= @solarpercent[1] %>"></div>
           </div>
         </div>
 
@@ -202,7 +217,8 @@
 
     <div id="weed" class="card">
     
-      <h4 class="green"><%= @weedcontest %></h4>
+      <h4 class="green"><%= @weedcontest %><br />
+      <span class="smaller green2">Statewide Results - 60% to pass</h4></h4>
     
 
       <div class="card-content">
