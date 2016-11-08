@@ -37,6 +37,11 @@
       font-size: 1.1em;
     }
 
+    .small {
+      font-size: 1em;
+      font-weight: 400;
+    }
+
     .header {
       background: #444444;
       text-align: center;
@@ -88,35 +93,35 @@
       <div class="card-content">
 
       <div class="field">
-        <h5><%= @kbnames[0] %> - Votes: <%= @kbvotes[0] %> - Percent: <%= @kbpercent[0] %>%</h5>
+        <h5><%= @kbnames[0] %> <br /><span class="small">Votes: <%= @kbvotes[0] %> - Percent: <%= @kbpercent[0] %>%</span></h5>
         <div class="percent-bar">
           <div class="percent-bar-inside" style="width: <%= @kbpercent[0] %>%"></div>
         </div>
       </div>
 
       <div class="field">
-        <h5><%= @kbnames[1] %> - Votes: <%= @kbvotes[1] %> - Percent: <%= @kbpercent[1] %>%</h5>
+        <h5><%= @kbnames[1] %> <br /><span class="small">Votes: <%= @kbvotes[1] %> - Percent: <%= @kbpercent[1] %>%</span></h5>
         <div class="percent-bar">
           <div class="percent-bar-inside" style="width: <%= @kbpercent[1] %>%"></div>
         </div>
       </div>
 
       <div class="field">
-        <h5><%= @kbnames[2] %> - Votes: <%= @kbvotes[2] %> - Percent: <%= @kbpercent[2] %>%</h5>
+        <h5><%= @kbnames[2] %> <br /><span class="small">Votes: <%= @kbvotes[2] %> - Percent: <%= @kbpercent[2] %>%</span></h5>
         <div class="percent-bar">
           <div class="percent-bar-inside" style="width: <%= @kbpercent[2] %>%"></div>
         </div>
       </div>
 
       <div class="field">
-        <h5><%= @kbnames[3] %> - Votes: <%= @kbvotes[3] %> - Percent: <%= @kbpercent[3] %>%</h5>
+        <h5><%= @kbnames[3] %> <br /><span class="small">Votes: <%= @kbvotes[3] %> - Percent: <%= @kbpercent[3] %>%</span></h5>
         <div class="percent-bar">
           <div class="percent-bar-inside" style="width: <%= @kbpercent[3] %>%"></div>
         </div>
       </div>
 
       <div class="field">
-        <h5><%= @kbnames[4] %> - Votes: <%= @kbvotes[4] %> - Percent: <%= @kbpercent[4] %>%</h5>
+        <h5><%= @kbnames[4] %> <br /><span class="small">Votes: <%= @kbvotes[4] %> - Percent: <%= @kbpercent[4] %>%</span></h5>
         <div class="percent-bar">
           <div class="percent-bar-inside" style="width: <%= @kbpercent[4] %>%"></div>
         </div>
@@ -124,7 +129,7 @@
 
 
       <div class="field">
-        <h5><%= @kbnames[5] %> - Votes: <%= @kbvotes[5] %> - Percent: <%= @kbpercent[5] %>%</h5>
+        <h5><%= @kbnames[5] %> <br /><span class="small">Votes: <%= @kbvotes[5] %> - Percent: <%= @kbpercent[5] %>%</span></h5>
         <div class="percent-bar">
           <div class="percent-bar-inside" style="width: <%= @kbpercent[5] %>%"></div>
         </div>
@@ -140,14 +145,14 @@
       <h4><%= @mayorcontest %></h4>
       <div class="card-content">
         <div class="field">
-          <h5><%= @mayornames[0] %> - Votes: <%= @mayorvotes[0] %> - Percent: <%= @mayorpercent[0] %>%</h5>
+          <h5><%= @mayornames[0] %> <br /><span class="small">Votes: <%= @mayorvotes[0] %> - Percent: <%= @mayorpercent[0] %>%</span></h5>
           <div class="percent-bar">
             <div class="percent-bar-inside" style="width: <%= @mayorpercent[0] %>%"></div>
           </div>
         </div>
 
         <div class="field">
-          <h5><%= @mayornames[1] %> - Votes: <%= @mayorvotes[1] %> - Percent: <%= @mayorpercent[1] %>%</h5>
+          <h5><%= @mayornames[1] %> <br /><span class="small">Votes: <%= @mayorvotes[1] %> - Percent: <%= @mayorpercent[1] %>%</span></h5>
           <div class="percent-bar">
             <div class="percent-bar-inside" style="width: <%= @mayorpercent[1] %>%"></div>
           </div>
@@ -164,14 +169,14 @@
       <div class="card-content">
       
         <div class="field">
-          <h5><%= @solarnames[0] %> - Percent: <%= @solarpercent[0] %></h5>
+          <h5><%= @solarnames[0] %> <br /><span class="small">Percent: <%= @solarpercent[0] %></span></h5>
           <div class="percent-bar">
             <div class="percent-bar-inside" style="width: <%= @solarpercent[0] %>"></div>
           </div>
         </div>
 
         <div class="field">
-          <h5><%= @solarnames[1] %> - Percent: <%= @solarpercent[1] %></h5>
+          <h5><%= @solarnames[1] %> <br /><span class="small">Percent: <%= @solarpercent[1] %></span></h5>
           <div class="percent-bar">
             <div class="percent-bar-inside" style="width: <%= @solarpercent[1] %>"></div>
           </div>
@@ -191,14 +196,14 @@
       <div class="card-content">
 
         <div class="field">
-          <h5><%= @weednames[0] %> - Percent: <%= @weedpercent[0] %></h5>
+          <h5><%= @weednames[0] %> <br /><span class="small">Percent: <%= @weedpercent[0] %></span></h5>
           <div class="percent-bar">
             <div class="percent-bar-inside green" style="width: <%= @weedpercent[0] %>"></div>
           </div>
         </div>
 
         <div class="field">
-          <h5><%= @weednames[1] %> - Percent: <%= @weedpercent[1] %></h5>
+          <h5><%= @weednames[1] %> <br /><span class="small">Percent: <%= @weedpercent[1] %></span></h5>
           <div class="percent-bar">
             <div class="percent-bar-inside green" style="width: <%= @weedpercent[1] %>"></div>
           </div>
