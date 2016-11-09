@@ -6,11 +6,11 @@ require 'sinatra'
 
 get "/" do
 
-miami_json = "http://results.enr.clarityelections.com/FL/Dade/64620/179412/json/sum.json"      
+miami_json = "http://results.enr.clarityelections.com/FL/Dade/64620/179986/json/sum.json"      
 miami_response = HTTParty.get(miami_json)
 election_json = JSON.parse(miami_response.body)
 
-miami_url = "http://results.enr.clarityelections.com/FL/Dade/64620/179412/en/summary.html"
+miami_url = "http://results.enr.clarityelections.com/FL/Dade/64620/179986/en/summary.html"
 miami_url_response = HTTParty.get(miami_url)
 miami_dom = Nokogiri::HTML(miami_url_response.body)
 
