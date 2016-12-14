@@ -126,142 +126,25 @@
       <p>Last update from Miami Dade Elections</p>
       <p><%= @last_update %></p>
     </div>
-
-    <div id="kb" class="card">
+  
+    <% @contests.each_with_index do |contest, i| %>
+    <div id="contest-<%= i %>" class="card">
       
-      <h4><%= @kbcontest %><br />
-      <span class="smaller"><%= @kbreport %> of <%= @kbtotal %> precincts reporting</span>
+      <h4><%= contest["C"].capitalize %><br />
+      <span class="smaller"><%= contest["PR"] %> of <%= contest["TP"] %> precincts reporting</span>
       </h4>
-      <div class="card-content">
-
-      <div class="field">
-        <h5><%= @kbnames[0] %> <br /><span class="small">Votes: <%= @kbvotes[0] %> - Percent: <%= @kbpercent[0].to_f.round(2) %>%</span></h5>
-        <div class="percent-bar">
-          <div class="percent-bar-inside" style="width: <%= @kbpercent[0] %>%"></div>
-        </div>
-      </div>
-
-      <div class="field">
-        <h5><%= @kbnames[1] %> <br /><span class="small">Votes: <%= @kbvotes[1] %> - Percent: <%= @kbpercent[1].to_f.round(2) %>%</span></h5>
-        <div class="percent-bar">
-          <div class="percent-bar-inside" style="width: <%= @kbpercent[1] %>%"></div>
-        </div>
-      </div>
-
-      <div class="field">
-        <h5><%= @kbnames[2] %> <br /><span class="small">Votes: <%= @kbvotes[2] %> - Percent: <%= @kbpercent[2].to_f.round(2) %>%</span></h5>
-        <div class="percent-bar">
-          <div class="percent-bar-inside" style="width: <%= @kbpercent[2] %>%"></div>
-        </div>
-      </div>
-
-      <div class="field">
-        <h5><%= @kbnames[3] %> <br /><span class="small">Votes: <%= @kbvotes[3] %> - Percent: <%= @kbpercent[3].to_f.round(2) %>%</span></h5>
-        <div class="percent-bar">
-          <div class="percent-bar-inside" style="width: <%= @kbpercent[3] %>%"></div>
-        </div>
-      </div>
-
-      <div class="field">
-        <h5><%= @kbnames[4] %> <br /><span class="small">Votes: <%= @kbvotes[4] %> - Percent: <%= @kbpercent[4].to_f.round(2) %>%</span></h5>
-        <div class="percent-bar">
-          <div class="percent-bar-inside" style="width: <%= @kbpercent[4] %>%"></div>
-        </div>
-      </div>
-
-
-      <div class="field">
-        <h5><%= @kbnames[5] %> <br /><span class="small">Votes: <%= @kbvotes[5] %> - Percent: <%= @kbpercent[5].to_f.round(2) %>%</span></h5>
-        <div class="percent-bar">
-          <div class="percent-bar-inside" style="width: <%= @kbpercent[5] %>%"></div>
-        </div>
-      </div>
-      </div>
-
-    </div>
-
-<!-------------- NEXT -->
-
-    <div id="mayor" class="card">
-
-      <h4><%= @mayorcontest %><br />
-      <span class="smaller"><%= @mayorreport %> of <%= @mayortotal %> precincts reporting</span>
-      </h4>
-
+      <% contest["CH"].each_with_index do |pick, h| %>
       <div class="card-content">
         <div class="field">
-          <h5><%= @mayornames[0] %> <br /><span class="small">Votes: <%= @mayorvotes[0] %> - Percent: <%= @mayorpercent[0].to_f.round(2) %>%</span></h5>
+          <h5><%= pick %> <br /><span class="small">Votes: <%= contest["V"][h] %> - Percent: <%= contest["PCT"][h].to_f.round(2) %>%</span></h5>
           <div class="percent-bar">
-            <div class="percent-bar-inside" style="width: <%= @mayorpercent[0] %>%"></div>
-          </div>
-        </div>
-
-        <div class="field">
-          <h5><%= @mayornames[1] %> <br /><span class="small">Votes: <%= @mayorvotes[1] %> - Percent: <%= @mayorpercent[1].to_f.round(2) %>%</span></h5>
-          <div class="percent-bar">
-            <div class="percent-bar-inside" style="width: <%= @mayorpercent[1] %>%"></div>
+            <div class="percent-bar-inside" style="width: <%= contest["PCT"][h] %>%"></div>
           </div>
         </div>
       </div>
-
+      <% end %>
     </div>
-
-<!-------------- NEXT -->
-
-    <div id="solar" class="card">
-      
-      <h4><%= @solarcontest %><br />
-      <span class="smaller">Statewide Results - 60% to pass</h4>
-      <div class="card-content">
-      
-        <div class="field">
-          <h5><%= @solarnames[0] %> <br /><span class="small">Percent: <%= @solarpercent[0] %></span></h5>
-          <div class="percent-bar">
-            <div class="percent-bar-inside" style="width: <%= @solarpercent[0] %>"></div>
-          </div>
-        </div>
-
-        <div class="field">
-          <h5><%= @solarnames[1] %> <br /><span class="small">Percent: <%= @solarpercent[1] %></span></h5>
-          <div class="percent-bar">
-            <div class="percent-bar-inside yellow" style="width: <%= @solarpercent[1] %>"></div>
-          </div>
-        </div>
-
-
-      </div>
-    </div>
-
-<!-------------- NEXT -->
-
-    <div id="weed" class="card">
-    
-      <h4 class="green"><%= @weedcontest %><br />
-      <span class="smaller green2">Statewide Results - 60% to pass</h4></h4>
-    
-
-      <div class="card-content">
-
-        <div class="field">
-          <h5><%= @weednames[0] %> <br /><span class="small">Percent: <%= @weedpercent[0] %></span></h5>
-          <div class="percent-bar">
-            <div class="percent-bar-inside green" style="width: <%= @weedpercent[0] %>"></div>
-          </div>
-        </div>
-
-        <div class="field">
-          <h5><%= @weednames[1] %> <br /><span class="small">Percent: <%= @weedpercent[1] %></span></h5>
-          <div class="percent-bar">
-            <div class="percent-bar-inside green" style="width: <%= @weedpercent[1] %>"></div>
-          </div>
-        </div>
-
-      </div>
-
-    </div>
-
-
-  </div>
+    <% end %>
   
 </body>
 </html>
